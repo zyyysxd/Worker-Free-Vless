@@ -1,5 +1,5 @@
 const config = {
-  WebToken: 'sub',//此处修改登录密码token
+  WebToken: '@token-sub',
   FileName: 'Vless',MainData: '',urls: [],subconverter: "SUBAPI.fxxk.dedyn.io",subconfig: "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_MultiCountry.ini", subProtocol: 'https',
 };
 export default {
@@ -50,8 +50,8 @@ export default {
       }
   }
 };
-function formatVlessLink({ protocol, uuid, address, port, encryption , security, sni, fingerprint, path, type, packetEncoding, host, hostname }) {
-  return `${protocol}://${uuid}@${address}:${port}?security=${security}&sni=${sni}&fp=${fingerprint}&type=${type}&path=${path}&host=${host}&packetEncoding=${packetEncoding}&encryption=${encryption}#${encodeURIComponent(hostname)}`;
+function formatVlessLink({ protocol = '', uuid = '', address = '', port = '', encryption = '', security = '', sni = '', fingerprint = '', path = '', type = '', publicKey = '', shortId = '', flow = '', hostname = '', additionalParams: { host = '' } = {}}) {
+  return `${protocol}://${uuid}@${address}:${port}?security=${security}&sni=${sni}&fp=${fingerprint}&type=${type}&path=${path}&host=${host}&pbk=${publicKey}&sid=${shortId}&flow=${flow}&encryption=${encryption}#${encodeURIComponent(hostname)}`;
 }
 async function fetchAndDecryptData() {
   const apiUrl = 'https://vless.enkelte.ggff.net/vless_list';
