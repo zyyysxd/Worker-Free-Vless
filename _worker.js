@@ -1,5 +1,5 @@
 const config = {
-  WebToken: 'sub',//此处修改登录密码token
+  WebToken: 'B4C8FE1C-90F3-F4FE-FE64-7FB011BDD5DF',//此处修改登录密码token
   FileName: 'Vless',MainData: '',urls: [],subconverter: "SUBAPI.CMLiussss.net",subconfig: "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_MultiCountry.ini", subProtocol: 'https',
 };
 export default {
